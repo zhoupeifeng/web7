@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="btnSet">存内容</button>
+		<button id="btnGet">存内容</button>
+		<script type="text/javascript">
+			var btn = document.getElementById("btnSet");
+			var btn = document.getElementById("btnGet");
+			//覆盖性
+			btn.onclick = function(){
+				console.log(window.localStorage);
+				if(window.localStorage){
+					window.localStorage.setItem("HXZ","黑小子邀请全班吃火锅");
+				}
+			}
+			//不会覆盖
+			btnGet.addEventListener("click",function(){
+				console.log(window.localStorage.getItem("HXZ"));
+			});
+			
+			//当所要绑定的事件对象是DOM中的内容（HTMLElement类型的）
+			//使用onclick（类型）来进行事件处理、
+			//当所要绑定事件的对象是非DOM中内容
+			//如：bootstrap的模态框、百度地图、图表对象等
+			//绑定事件必须用addEventListener
+		</script>
+	</body>
+</html>
